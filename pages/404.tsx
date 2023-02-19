@@ -12,11 +12,11 @@ export default function FourZeroFour() {
           </h1>
         </div>
         <div className="max-w-md">
-          <p className="mb-4 text-xl font-bold leading-normal md:text-2xl">
-            Sorry we couldn't find this page.
+          <p className="mb-4 text-2xl font-bold leading-normal md:text-2xl">
+            Oops! Wrong turn 🚷
           </p>
           <p className="mb-8">
-            But dont worry, you can find plenty of other things on our homepage.
+            But dont worry, you can find plenty of other things on my homepage🚀.
           </p>
           <Link
             href="/"
