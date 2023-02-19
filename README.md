@@ -18,6 +18,7 @@ Based on [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwin
 - [ ] Update `references-data`
 - [ ] Modify `data/blog` with own blog posts
 - [ ] Upload new logo - `data/logo.svg`
+- [ ] Generate favicons
 - [ ] Update `twitter-card`
 - [ ] Add Google Analytics and update analytics in `siteMetadata.js`
 - [ ] Connect `Plausible` analytics and add it in `siteMetadata.js`.
