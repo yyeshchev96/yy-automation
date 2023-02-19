@@ -8,10 +8,10 @@ Based on [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwin
 - [x] Personalize `siteMetadata.js` (site related information)
 - [x] Personalize `authors/default.md` (main author)
 - [x] Modify `headerNavLinks.js` to customize navigation links
+- [ ] Remove old `tags`, `blogs`, `images`, etc.
 - [ ] Deploy on Vercel
 - [ ] Update bio in `authors/default.md`
 - [ ] Add extra routes to reflect new pages in `headerNavLinks.js`
-- [ ] Remove old `tags`, `blogs`, `images`, etc.
 
 ## Extra Todo:
 - [ ] Update `references-data`
