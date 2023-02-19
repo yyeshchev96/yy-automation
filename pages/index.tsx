@@ -9,7 +9,7 @@ import { NewsletterForm } from 'pliny/ui/NewsletterForm'
 import { allBlogs } from 'contentlayer/generated'
 import type { Blog } from 'contentlayer/generated'
 
-const MAX_DISPLAY = 5
+const MAX_POSTS = 3
 
 export const getStaticProps = async () => {
   const sortedPosts = sortedBlogPost(allBlogs) as Blog[]
@@ -33,7 +33,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
+          {posts.slice(0, MAX_POSTS).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-12">
@@ -83,7 +83,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           })}
         </ul>
       </div>
-      {posts.length > MAX_DISPLAY && (
+      {posts.length > MAX_POSTS && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -94,11 +94,12 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           </Link>
         </div>
       )}
-      {siteMetadata.newsletter.provider && (
+      {/* TODO: re-enable once newsletter is configured  */}
+      {/* {siteMetadata.newsletter.provider && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />
         </div>
-      )}
+      )} */}
     </>
   )
 }
