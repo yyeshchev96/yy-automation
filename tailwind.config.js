@@ -31,19 +31,19 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.emerald,
         gray: colors.neutral,
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.gray.500'),
             a: {
               color: theme('colors.primary.500'),
               '&:hover': {
-                color: `${theme('colors.primary.600')} !important`,
+                color: `${theme('colors.primary.700')} !important`,
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.primary.500') },
             },
             h1: {
               fontWeight: '700',

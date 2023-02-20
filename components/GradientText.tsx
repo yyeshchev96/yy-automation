@@ -6,7 +6,7 @@ interface Props {
 
 export default function GradientText({ children }: Props) {
   return (
-    <span className="bg-gradient-to-r from-emerald-500 via-cyan-900 to-blue-500 bg-clip-text text-transparent">
+    <span className="bg-gradient-to-r from-emerald-400 via-cyan-700 to-blue-400 bg-clip-text text-transparent">
       {children}
     </span>
   )
