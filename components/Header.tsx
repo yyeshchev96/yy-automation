@@ -7,7 +7,7 @@ import ThemeSwitch from './ThemeSwitch'
 
 const Header = () => {
   return (
-    <header className="firefox:bg-opacity-100 sticky dark:firefox:bg-opacity-100 top-0 z-30 flex items-center justify-between bg-white bg-opacity-80 py-3 backdrop-blur-sm backdrop-saturate-200 backdrop-filter dark:bg-gray-900 dark:bg-opacity-30">
+    <header className="backdrop-blur-none backdrop-filter-none firefox:bg-opacity-100 sticky dark:firefox:bg-opacity-100 top-0 z-30 flex items-center justify-between sm:backdrop-blur-sm bg-white bg-opacity-80 py-3 sm:backdrop-saturate-200 sm:backdrop-filter dark:bg-gray-900 dark:bg-opacity-30">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
@@ -15,7 +15,7 @@ const Header = () => {
               <Logo />
             </div>
             {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="hidden h-6 text-2xl font-semibold sm:block">
+              <div className="h-6 text-2xl font-semibold">
                 {siteMetadata.headerTitle}
               </div>
             ) : (

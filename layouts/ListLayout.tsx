@@ -82,7 +82,7 @@ export default function ListLayout({
           <h1 className="text-5xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-14">
             <GradientText>{title}</GradientText>
           </h1>
-          <div className="relative max-w-lg">
+          <div className="relative max-w-l">
             <label>
               <span className="sr-only">Search articles</span>
               <input
