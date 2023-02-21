@@ -7,7 +7,7 @@ import ThemeSwitch from './ThemeSwitch'
 
 const Header = () => {
   return (
-    <header className="backdrop-blur-none backdrop-filter-none firefox:bg-opacity-100 sticky dark:firefox:bg-opacity-100 top-0 z-30 flex items-center justify-between sm:backdrop-blur-sm bg-white bg-opacity-80 py-3 sm:backdrop-saturate-200 sm:backdrop-filter dark:bg-gray-900 dark:bg-opacity-30">
+    <header className="sticky backdrop-blur-none backdrop-filter-none top-0 z-30 flex items-center justify-between sm:backdrop-blur-sm bg-white py-3 sm:backdrop-saturate-200 sm:backdrop-filter dark:bg-gray-900 bg-opacity-100 border-b dark:border-b sm:border-none sm:border-gray-200 dark:border-gray-700 sm:dark:bg-opacity-30 sm:bg-opacity-50">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
