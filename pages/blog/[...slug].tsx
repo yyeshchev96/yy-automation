@@ -46,16 +46,16 @@ export default function BlogPostPage({
   prev,
   next,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  let roadSign = (
+    <span role="img" aria-label="roadwork sign">
+      🚧
+    </span>
+  )
   return (
     <>
       {'draft' in post && post.draft === true ? (
         <div className="mt-24 text-center">
-          <PageTitle>
-            Under Construction{' '}
-            <span role="img" aria-label="roadwork sign">
-              🚧
-            </span>
-          </PageTitle>
+          <PageTitle extra={roadSign}>Under Construction &nbsp;</PageTitle>
         </div>
       ) : (
         <MDXLayoutRenderer

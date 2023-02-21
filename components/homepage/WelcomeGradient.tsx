@@ -1,12 +1,14 @@
-import GradientText from '../GradientText'
+import PageTitle from '../PageTitle'
 
 export function WelcomeGradient() {
+  let wavingHandIcon = (
+    <span role="img" aria-label="waving hand">
+      👋
+    </span>
+  )
   return (
     <div>
-      <h1 className="text-4xl font-extrabold leading-9 tracking-tight sm:text-5xl sm:leading-10 md:text-6xl md:leading-14">
-        <GradientText>Hello and welcome &nbsp;</GradientText>
-        👋
-      </h1>
+      <PageTitle extra={wavingHandIcon}>Hello and welcome&nbsp;</PageTitle>
     </div>
   )
 }
