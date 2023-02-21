@@ -7,6 +7,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import GradientText from '@/components/GradientText'
+import NoPostsFound from '@/components/Posts'
 
 interface PaginationProps {
   totalPages: number
@@ -82,7 +83,7 @@ export default function ListLayout({
           <h1 className="text-5xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-14">
             <GradientText>{title}</GradientText>
           </h1>
-          <div className="relative max-w-l">
+          <div className="max-w-l relative">
             <label>
               <span className="sr-only">Search articles</span>
               <input
@@ -110,7 +111,7 @@ export default function ListLayout({
           </div>
         </div>
         <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
+          {!filteredBlogPosts.length && <NoPostsFound />}
           {displayPosts.map((post) => {
             const { path, date, title, summary, tags } = post
             return (

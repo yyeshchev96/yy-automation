@@ -7,7 +7,7 @@ export function WelcomeGradient() {
     </span>
   )
   return (
-    <div>
+    <div className="mb-6">
       <PageTitle extra={wavingHandIcon}>Hello and welcome&nbsp;</PageTitle>
     </div>
   )

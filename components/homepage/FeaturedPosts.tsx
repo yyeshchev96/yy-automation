@@ -3,6 +3,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import { BlogFrontMatter } from 'types/mdx'
+import NoPostsFound from '../Posts'
 
 const MAX_POSTS = 3
 
@@ -13,7 +14,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
         Latest posts:
       </h1>
       <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-        {!posts.length && 'No posts found.'}
+        {!posts.length && <NoPostsFound />}
         {posts.slice(0, MAX_POSTS).map((post) => {
           const { slug, date, title, summary, tags } = post
           return (
