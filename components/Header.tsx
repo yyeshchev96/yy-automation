@@ -1,23 +1,32 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
 import Link from './Link'
 import MobileNav from './MobileNav'
+import Image from './Image'
 import ThemeSwitch from './ThemeSwitch'
+import { useTheme } from 'next-themes'
+import lightLogo from '../public/static/images/yy-gear-light.png'
+import darkLogo from '../public/static/images/yy-gear-dark.png'
 
 const Header = () => {
+  const { theme, resolvedTheme } = useTheme()
+
   return (
-    <header className="sticky backdrop-blur-none backdrop-filter-none top-0 z-30 flex items-center justify-between sm:backdrop-blur-sm bg-white py-3 sm:backdrop-saturate-200 sm:backdrop-filter dark:bg-gray-900 bg-opacity-100 border-b dark:border-b sm:border-none sm:border-gray-200 dark:border-gray-700 sm:dark:bg-opacity-30 sm:bg-opacity-50">
+    <header className="sticky top-0 z-30 flex items-center justify-between border-b bg-white bg-opacity-100 py-3 backdrop-blur-none backdrop-filter-none dark:border-b dark:border-gray-700 dark:bg-gray-900 sm:border-none sm:border-gray-200 sm:bg-opacity-50 sm:backdrop-blur-sm sm:backdrop-saturate-200 sm:backdrop-filter sm:dark:bg-opacity-30">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
             <div className="mr-3">
-              <Logo />
+              <Image
+                src={theme === 'dark' || resolvedTheme === 'dark' ? darkLogo : lightLogo}
+                alt={'yy automation'}
+                width="54"
+                height="54"
+                className="rounded-full"
+              />
             </div>
             {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="h-6 text-2xl font-semibold">
-                {siteMetadata.headerTitle}
-              </div>
+              <div className="hidden h-6 text-2xl font-semibold">{siteMetadata.headerTitle}</div>
             ) : (
               siteMetadata.headerTitle
             )}

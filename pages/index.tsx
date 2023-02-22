@@ -44,7 +44,6 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
               <p className="mb-3 text-lg">
                 Welcome to my blog <span className='font-bold'>YY Automation</span>.
                 I specialize in setting up testing processes, building automation frameworks from scratch, and improving product quality.
-                If you're looking for help with test automation, process improvement, or anything related to software testing, I'm here to help. 
               </p>
 
               <div className="mb-3 flex space-x-4">
