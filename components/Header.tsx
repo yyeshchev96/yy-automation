@@ -5,8 +5,6 @@ import MobileNav from './MobileNav'
 import Image from './Image'
 import ThemeSwitch from './ThemeSwitch'
 import { useTheme } from 'next-themes'
-import lightLogo from '../public/static/images/yy-gear-light.png'
-import darkLogo from '../public/static/images/yy-gear-dark.png'
 
 const Header = () => {
   const { theme, resolvedTheme } = useTheme()
@@ -18,10 +16,14 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <div className="mr-3">
               <Image
-                src={theme === 'dark' || resolvedTheme === 'dark' ? darkLogo : lightLogo}
-                alt={'yy automation'}
-                width="54"
-                height="54"
+                src={
+                  theme === 'dark' || resolvedTheme === 'dark'
+                    ? '/static/images/yy-gear2-white.svg'
+                    : '/static/images/yy-gear2-black.svg'
+                }
+                alt={'logo'}
+                width="42"
+                height="42"
                 className="rounded-full"
               />
             </div>

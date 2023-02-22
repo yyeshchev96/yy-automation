@@ -14,7 +14,7 @@ export default function Footer() {
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
           <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
         </div>
-        <div className="mb-2 flex space-x-1 sm:space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mb-2 flex space-x-1 text-sm text-gray-500 dark:text-gray-400 sm:space-x-2">
           <div>{siteMetadata.author}</div>
           <div>{` | `}</div>
           <div>{`Copyright © ${new Date().getFullYear()}`}</div>
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            powered by Tailwind NextJS Template
+            powered by NextJS Tailwind Vercel
           </Link>
         </div>
       </div>

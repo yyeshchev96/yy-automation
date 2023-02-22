@@ -11,7 +11,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
   return (
     <div>
       <h1 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-        Latest posts:
+        Latest in Blog:
       </h1>
       <ul className="divide-y divide-gray-200 dark:divide-gray-700">
         {!posts.length && <NoPostsFound />}
