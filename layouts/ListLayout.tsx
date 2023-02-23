@@ -80,7 +80,7 @@ export default function ListLayout({
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-8 pb-8 md:space-y-5">
-          <h1 className="text-5xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl md:text-6xl leading-10 md:leading-14">
             <GradientText>{title}</GradientText>
           </h1>
           <div className="max-w-l relative">
@@ -115,7 +115,7 @@ export default function ListLayout({
           {displayPosts.map((post) => {
             const { path, date, title, summary, tags } = post
             return (
-              <li key={path} className="py-4">
+              <li key={path} className="py-4 border-b border-gray-200 dark:border-gray-700">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>

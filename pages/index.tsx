@@ -9,6 +9,7 @@ import type { Blog } from 'contentlayer/generated'
 import { BlogFrontMatter } from 'types/mdx'
 import Image from '@/components/Image'
 import SocialIcon from '@/components/social-icons'
+import Link from '@/components/Link'
 // import About from './about'
 // import PageTitle from '@/components/PageTitle'
 // import GradientText from '@/components/GradientText'
@@ -25,7 +26,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
 
-      <div className="mt-8 sm:mt-20 mb-4 sm:mb-10 font-sans divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="mt-8 mb-4 sm:mt-20 sm:mb-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:flex-row-reverse">
           <div className="mx-auto">
             <Image
@@ -36,28 +37,35 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
               className="rounded-full"
             />
           </div>
-          <div className="flex-1 mt-0 sm:mt-14">
+          <div className="mt-0 flex-1 sm:mt-14">
             <div className="flex flex-col pr-0 sm:pr-8">
               <p className="mb-2 pt-3 pb-3 text-center text-3xl font-bold text-black dark:text-white sm:border-b sm:border-gray-300 sm:text-left sm:text-4xl sm:dark:border-gray-700">
                 Hi 👋, I'm Yevhen
               </p>
-              <p className="prose mb-3 text-gray-500 dark:text-gray-400">
+              <p className="prose text-gray-500 dark:text-gray-400">
                 Welcome to my website{' '}
                 <strong className="text-gray-900 dark:text-gray-100">YY Automation</strong>.
-                <br />I specialize in test automation using{' '}
-                <strong className="text-gray-900 dark:text-gray-100">Python</strong> and{' '}
-                <strong className="text-gray-900 dark:text-gray-100">TypeScript</strong>, setting up
+                <br />I specialize on test automation using Python and TypeScript, setting up
                 testing processes, building automation frameworks from scratch, and improving
                 product quality.
               </p>
 
-              <div className="mb-3 flex space-x-4 align-bottom align-text-bottom">
+              <div className="mt-3 text-base font-medium leading-6">
+                <Link
+                  href="/about"
+                  className="text-primary-500 hover:text-primary-700 dark:hover:text-primary-400"
+                >
+                  Read more &rarr;
+                </Link>
+              </div>
+
+              {/* <div className="mb-3 flex space-x-4 align-bottom align-text-bottom">
                 <span className="text-2xl font-bold text-emerald-500">Contant me: </span>
                 <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
                 <SocialIcon kind="github" href={siteMetadata.github} size={6} />
                 <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
                 <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

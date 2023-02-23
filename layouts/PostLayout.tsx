@@ -129,7 +129,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     </div>
                   </div>
                 )}
-                {(next || prev) && (
+                {/* {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
                       <div>
@@ -152,7 +152,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                       </div>
                     )}
                   </div>
-                )}
+                )} */}
               </div>
               <div className="pt-4 xl:pt-8">
                 <Link

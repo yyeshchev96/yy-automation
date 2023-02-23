@@ -10,57 +10,43 @@ const MAX_POSTS = 3
 export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
   return (
     <div>
-      <h1 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+      <h1 className="my-4 mt-12 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
         Latest in Blog:
       </h1>
-      <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+      <ul className="flex flex-col gap-8 sm:flex-row">
         {!posts.length && <NoPostsFound />}
         {posts.slice(0, MAX_POSTS).map((post) => {
           const { slug, date, title, summary, tags } = post
           return (
-            <li key={slug} className="py-3">
-              <article>
-                <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
+            <div className="w-full sm:w-1/3">
+              <Link href={`/blog/${slug}`}>
+                {/* Post Card Container */}
+                <article className="h-full scale-100 hover:scale-105 shadow-lg shadow-gray-300 dark:shadow-gray-700 transform rounded-xl border border-gray-200 duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-primary-700">
+                  {/* Content Container */}
+                  <div className="flex h-full flex-col justify-start p-3">
+                    <h2 className="text-xl font-bold leading-8 tracking-tight">{title}</h2>
+                    <div className="">
+                      {tags.map((tag) => (
+                        <Tag key={tag} text={tag} />
+                      ))}
+                    </div>
+                    <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
+                  </div>
+
+                  {/* <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
-                  </dl>
-                  <div className="space-y-2 xl:col-span-3">
-                    <div className="space-y-6">
-                      <div>
-                        <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                          <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                            {title}
-                          </Link>
-                        </h2>
-                        <div className="flex flex-wrap">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
-                        </div>
-                      </div>
-                      <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
-                    </div>
-                    <div className="text-base font-medium leading-6">
-                      <Link
-                        href={`/blog/${slug}`}
-                        className="text-primary-500 hover:text-primary-700 dark:hover:text-primary-400"
-                        aria-label={`Read "${title}"`}
-                      >
-                        Read more &rarr;
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </li>
+                  </dl> */}
+                </article>
+              </Link>
+            </div>
           )
         })}
       </ul>
       {posts.length > MAX_POSTS && (
-        <div className="flex justify-end text-base font-medium leading-6">
+        <div className="mt-8 flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
             className="text-primary-500 hover:text-primary-700 dark:hover:text-primary-400"
