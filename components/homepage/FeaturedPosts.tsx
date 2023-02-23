@@ -18,30 +18,32 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
         {posts.slice(0, MAX_POSTS).map((post) => {
           const { slug, date, title, summary, tags } = post
           return (
-            <div className="w-full sm:w-1/3">
-              <Link href={`/blog/${slug}`}>
-                {/* Post Card Container */}
-                <article className="h-full scale-100 hover:scale-105 shadow-lg shadow-gray-300 dark:shadow-gray-700 transform rounded-xl border border-gray-200 duration-300 hover:border-primary-500 dark:border-gray-700 dark:hover:border-primary-700">
-                  {/* Content Container */}
-                  <div className="flex h-full flex-col justify-start p-3">
+            <li key={slug} className="w-full sm:w-1/3">
+              {/* Post Card Container */}
+              <article className="h-full scale-100 transform rounded-xl border border-gray-200 shadow-lg shadow-gray-300 duration-300 hover:scale-105 hover:border-primary-500 dark:border-gray-700 dark:shadow-gray-700 dark:hover:border-primary-700">
+                {/* Content Container */}
+                <div className="flex h-full flex-col justify-start p-3">
+                  <Link href={`/blog/${slug}`}>
                     <h2 className="text-xl font-bold leading-8 tracking-tight">{title}</h2>
-                    <div className="">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div>
-                    <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
+                  </Link>
+                  <div>
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
                   </div>
+                  <Link href={`/blog/${slug}`}>
+                    <div className="prose text-gray-500 dark:text-gray-400">{summary}</div>
+                  </Link>
+                </div>
 
-                  {/* <dl>
+                {/* <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
                   </dl> */}
-                </article>
-              </Link>
-            </div>
+              </article>
+            </li>
           )
         })}
       </ul>
