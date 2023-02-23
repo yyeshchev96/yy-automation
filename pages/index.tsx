@@ -25,23 +25,23 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
 
-      <div className="mt-8 mb-10 divide-y divide-gray-200 dark:divide-gray-700 sm:mt-20">
+      <div className="mt-8 sm:mt-20 mb-4 sm:mb-10 font-sans divide-y divide-gray-200 dark:divide-gray-700">
         <div className="flex flex-col gap-8 sm:flex-row sm:flex-row-reverse">
           <div className="mx-auto">
             <Image
               src={'/static/images/avatar.png'}
               alt={'yy-automation'}
-              width="240"
-              height="240"
-              className="h-60 w-60 rounded-full"
+              width="264"
+              height="264"
+              className="rounded-full"
             />
           </div>
-          <div className="flex-1">
-            <div className="mb-10 flex flex-col pr-0 sm:pr-8">
-              <p className="mb-2 py-5 pt-12 text-center text-3xl font-bold text-black dark:text-white sm:border-b sm:border-gray-300 sm:text-left sm:text-4xl sm:dark:border-gray-700">
+          <div className="flex-1 mt-0 sm:mt-14">
+            <div className="flex flex-col pr-0 sm:pr-8">
+              <p className="mb-2 pt-3 pb-3 text-center text-3xl font-bold text-black dark:text-white sm:border-b sm:border-gray-300 sm:text-left sm:text-4xl sm:dark:border-gray-700">
                 Hi 👋, I'm Yevhen
               </p>
-              <p className="prose mb-3 font-sans text-gray-500 dark:text-gray-400">
+              <p className="prose mb-3 text-gray-500 dark:text-gray-400">
                 Welcome to my website{' '}
                 <strong className="text-gray-900 dark:text-gray-100">YY Automation</strong>.
                 <br />I specialize in test automation using{' '}
