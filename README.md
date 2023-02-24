@@ -1,6 +1,6 @@
 # yy-automation.com
 
-Personal website and blog: [yy-automation.com](https://yy-automation.com)
+Personal website and blog: [https://yy-automation.vercel.app/](https://yy-automation.vercel.app/)
 
 Based on [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog/tree/master)
 
@@ -15,6 +15,7 @@ Based on [timlrx/tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwin
 - [x] Deploy on Vercel 🚀
 
 ## Extra Todo:
+- [ ] Move to custom domain [https://yy-automation.com/](https://yy-automation.com/)
 - [ ] Update bio in `authors/default.md`
 - [ ] Add extra routes to reflect new pages in `headerNavLinks.js`
 - [ ] Update `references-data`
