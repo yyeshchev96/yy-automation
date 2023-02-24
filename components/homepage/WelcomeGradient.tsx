@@ -1,7 +1,7 @@
 import PageTitle from '../PageTitle'
 
 export function WelcomeGradient() {
-  let wavingHandIcon = (
+  const wavingHandIcon = (
     <span role="img" aria-label="waving hand">
       👋
     </span>
