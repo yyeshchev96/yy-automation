@@ -10,7 +10,7 @@ const Header = () => {
   const { theme, resolvedTheme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between border-b bg-white bg-opacity-100 py-3 backdrop-blur-none backdrop-filter-none dark:border-b dark:border-gray-700 dark:bg-gray-900 sm:border-none sm:border-gray-200 sm:bg-opacity-50 sm:backdrop-blur-sm sm:backdrop-saturate-200 sm:backdrop-filter sm:dark:bg-opacity-30">
+    <header className="sticky top-0 z-30 flex items-center justify-between border-b bg-white bg-opacity-100 px-3 py-3 backdrop-blur-none backdrop-filter-none dark:border-b dark:border-gray-700 dark:bg-gray-900 sm:border-none sm:border-gray-200 sm:bg-opacity-50 sm:backdrop-blur-sm sm:backdrop-saturate-200 sm:backdrop-filter sm:dark:bg-opacity-30 lg:px-0">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">

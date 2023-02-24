@@ -38,7 +38,7 @@ const MobileNav = () => {
         </svg>
       </button>
       <div
-        className={`fixed top-0 left-0 z-10 h-full w-full transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 ${
+        className={`fixed top-0 left-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-900 ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -62,9 +62,12 @@ const MobileNav = () => {
             </svg>
           </button>
         </div>
-        <nav className="fixed mt-8 h-full">
+        <nav className="fixed mt-8 h-full w-full">
           {headerNavLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
+            <div
+              key={link.title}
+              className="border-b border-gray-200 px-12 py-4 dark:border-gray-700 "
+            >
               <Link
                 href={link.href}
                 className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
