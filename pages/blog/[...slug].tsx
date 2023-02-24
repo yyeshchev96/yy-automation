@@ -46,7 +46,7 @@ export default function BlogPostPage({
   prev,
   next,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  let roadSign = (
+  const roadSign = (
     <span role="img" aria-label="roadwork sign">
       🚧
     </span>
