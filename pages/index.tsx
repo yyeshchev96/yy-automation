@@ -1,18 +1,13 @@
 import { PageSEO } from '@/components/SEO'
 import { FeaturedPosts } from '@/components/homepage/FeaturedPosts'
-// import { WelcomeGradient } from '@/components/homepage/WelcomeGradient'
 import siteMetadata from '@/data/siteMetadata'
 import { sortedBlogPost, allCoreContent } from 'pliny/utils/contentlayer'
 // import { NewsletterForm } from 'pliny/ui/NewsletterForm'
-import { allAuthors, allBlogs } from 'contentlayer/generated'
+import { allBlogs } from 'contentlayer/generated'
 import type { Blog } from 'contentlayer/generated'
 import { BlogFrontMatter } from 'types/mdx'
 import Image from '@/components/Image'
-import SocialIcon from '@/components/social-icons'
 import Link from '@/components/Link'
-// import About from './about'
-// import PageTitle from '@/components/PageTitle'
-// import GradientText from '@/components/GradientText'
 
 export const getStaticProps = async () => {
   const sortedPosts = sortedBlogPost(allBlogs) as Blog[]
@@ -58,14 +53,6 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
                   Read more &rarr;
                 </Link>
               </div>
-
-              {/* <div className="mb-3 flex space-x-4 align-bottom align-text-bottom">
-                <span className="text-2xl font-bold text-emerald-500">Contant me: </span>
-                <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
-                <SocialIcon kind="github" href={siteMetadata.github} size={6} />
-                <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
-                <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-              </div> */}
             </div>
           </div>
         </div>

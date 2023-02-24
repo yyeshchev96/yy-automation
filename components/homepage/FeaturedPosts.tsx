@@ -1,7 +1,5 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
 import { BlogFrontMatter } from 'types/mdx'
 import NoPostsFound from '../Posts'
 
@@ -16,11 +14,11 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
       <ul className="flex flex-col gap-8 sm:flex-row">
         {!posts.length && <NoPostsFound />}
         {posts.slice(0, MAX_POSTS).map((post) => {
-          const { slug, date, title, summary, tags } = post
+          const { slug, title, summary, tags } = post
           return (
             <li key={slug} className="w-full sm:w-1/3">
               {/* Post Card Container */}
-              <article className="h-full scale-100 transform rounded-xl border border-gray-200 shadow-lg shadow-gray-300 duration-300 hover:scale-105 hover:border-primary-500 dark:border-gray-700 dark:shadow-gray-700 dark:hover:border-primary-700">
+              <article className="h-full scale-100 transform rounded-xl border border-gray-200 shadow-lg shadow-gray-300 duration-300 sm:hover:scale-105 hover:border-primary-500 dark:border-gray-700 dark:shadow-primary-700 dark:hover:border-primary-700">
                 {/* Content Container */}
                 <div className="flex h-full flex-col justify-start p-3">
                   <Link href={`/blog/${slug}`}>
