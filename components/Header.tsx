@@ -4,26 +4,19 @@ import Link from './Link'
 import MobileNav from './MobileNav'
 import Image from './Image'
 import ThemeSwitch from './ThemeSwitch'
-import { useTheme } from 'next-themes'
 
 const Header = () => {
-  const { theme, resolvedTheme } = useTheme()
-
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between border-b bg-white bg-opacity-100 px-3 py-3 backdrop-blur-none backdrop-filter-none dark:border-b dark:border-gray-700 dark:bg-gray-900 sm:border-none sm:border-gray-200 sm:bg-opacity-50 sm:backdrop-blur-sm sm:backdrop-saturate-200 sm:backdrop-filter sm:dark:bg-opacity-30 lg:px-0">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
-            <div className="mr-3">
+            <div className="mr-3 dark:invert w-50 h-50">
               <Image
-                src={
-                  theme === 'dark' || resolvedTheme === 'dark'
-                    ? '/static/images/yy-gear2-white.svg'
-                    : '/static/images/yy-gear2-black.svg'
-                }
+                src='/static/images/yy-gear2-black.svg'
                 alt={'logo'}
-                width="42"
-                height="42"
+                width="50"
+                height="50"
                 className="rounded-full"
               />
             </div>
