@@ -11,9 +11,9 @@ const Header = () => {
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
-            <div className="mr-3 dark:invert w-50 h-50">
+            <div className="w-50 h-50 mr-3 dark:invert">
               <Image
-                src='/static/images/yy-gear2-black.svg'
+                src="/static/images/yy-gear2-black.svg"
                 alt={'logo'}
                 width="50"
                 height="50"
