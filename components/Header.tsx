@@ -11,7 +11,7 @@ const Header = () => {
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
-            <div className="w-50 h-50 mr-3 dark:invert">
+            <div className="w-50 h-50 mr-3 dark:invert" data-testid="logo">
               <Image
                 src="/static/images/yy-gear2-black.svg"
                 alt={'logo'}
@@ -29,7 +29,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex items-center text-base leading-5">
-        <div className="hidden sm:block">
+        <div className="hidden sm:block" data-testid="desktop-nav-menu">
           {headerNavLinks.map((link) => (
             <Link
               key={link.title}
