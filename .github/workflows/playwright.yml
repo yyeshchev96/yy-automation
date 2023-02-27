@@ -1,14 +1,12 @@
-name: Playwright E2E Tests
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+name: Playwright E2E Smoke Tests
+on: deployment_status
+
 jobs:
-  runTests:
-    timeout-minutes: 60
+  e2e-tests:
+    if: github.event.deployment_status.state == 'success'
+    timeout-minutes: 10
     runs-on: ubuntu-22.04
-    container: mcr.microsoft.com/playwright:v1.30.0-focal
+    container: mcr.microsoft.com/playwright:v1.31.1-focal
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +22,8 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
 
       - uses: actions/upload-artifact@v3
         if: always()
@@ -31,3 +31,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 7
