@@ -9,7 +9,7 @@ jobs:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     timeout-minutes: 10
     runs-on: ubuntu-22.04
-    container: mcr.microsoft.com/playwright:v1.30.0-focal
+    container: mcr.microsoft.com/playwright:v1.31.1-focal
 
     steps:
       - uses: actions/checkout@v3
