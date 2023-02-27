@@ -1,12 +1,13 @@
-name: Playwright E2E Tests
+name: Playwright Post-Deploy Tests
+
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  deployment_status:
+    types: [created, updated]
+
 jobs:
-  runTests:
-    timeout-minutes: 60
+  run-e2e-tests:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    timeout-minutes: 10
     runs-on: ubuntu-22.04
     container: mcr.microsoft.com/playwright:v1.30.0-focal
 
@@ -24,6 +25,8 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
 
       - uses: actions/upload-artifact@v3
         if: always()
