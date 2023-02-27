@@ -1,5 +1,4 @@
-name: Playwright E2E Tests
-
+name: Playwright E2E Smoke Tests
 on:
   push:
     branches: [main]
@@ -9,7 +8,7 @@ jobs:
   runTests:
     timeout-minutes: 60
     runs-on: ubuntu-22.04
-    container: mcr.microsoft.com/playwright:v1.31.1-focal
+    container: mcr.microsoft.com/playwright:v1.30.0-focal
 
     steps:
       - uses: actions/checkout@v3
