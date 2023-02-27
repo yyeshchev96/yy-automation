@@ -1,9 +1,6 @@
 name: Playwright E2E Smoke Tests
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: deployment_status
+
 jobs:
   runTests:
     timeout-minutes: 60
