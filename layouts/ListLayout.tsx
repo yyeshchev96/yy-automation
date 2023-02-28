@@ -115,7 +115,7 @@ export default function ListLayout({
           {displayPosts.map((post) => {
             const { path, date, title, summary, tags } = post
             return (
-              <li key={path} className="border-b border-gray-200 py-4 dark:border-gray-700">
+              <li key={path} className="border-b border-gray-200 py-6 dark:border-gray-700">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>
@@ -123,7 +123,7 @@ export default function ListLayout({
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
                   </dl>
-                  <div className="space-y-3 xl:col-span-3">
+                  <div className="xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
                         <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
@@ -136,9 +136,11 @@ export default function ListLayout({
                         ))}
                       </div>
                     </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
-                    </div>
+                    <Link href={`/${path}`}>
+                      <div className="prose mt-4 mb-2 max-w-none text-gray-500 dark:text-gray-400">
+                        {summary}
+                      </div>
+                    </Link>
                   </div>
                 </article>
               </li>
