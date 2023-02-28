@@ -20,9 +20,9 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
               {/* Post Card Container */}
               <article className="h-full scale-100 transform rounded-xl border border-gray-200 shadow-lg shadow-gray-300 duration-300 hover:border-primary-500 dark:border-gray-700 dark:shadow-primary-700 dark:hover:border-primary-700 sm:hover:scale-105">
                 {/* Content Container */}
-                <div className="flex h-full flex-col justify-start p-3">
+                <div className="flex h-full flex-col justify-start p-4">
                   <Link href={`/blog/${slug}`}>
-                    <h2 className="text-xl font-bold leading-8 tracking-tight">{title}</h2>
+                    <h2 className="text-lg font-bold leading-6 tracking-tight">{title}</h2>
                   </Link>
                   <div>
                     {tags.map((tag) => (

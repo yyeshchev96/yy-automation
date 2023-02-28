@@ -50,11 +50,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
           </Link>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
-          <header className="pt-6 pb-4">
+          <header className="py-8">
             <div className="space-y-2 font-medium">
-              <div id="title">
-                <PageTitle>{title}</PageTitle>
-              </div>
               <dl id="published-date" className="space-y-2">
                 <dt className="sr-only">Published on</dt>
                 <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
@@ -63,14 +60,8 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   </time>
                 </dd>
               </dl>
-              <div id="tags" className="text-sm font-medium leading-5">
-                {tags && (
-                  <div className="flex flex-wrap">
-                    {tags.map((tag) => (
-                      <Tag key={tag} text={tag} />
-                    ))}
-                  </div>
-                )}
+              <div id="title">
+                <PageTitle>{title}</PageTitle>
               </div>
             </div>
           </header>
@@ -80,7 +71,20 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0"
             >
               <div className="prose max-w-none pt-6 pb-8 dark:prose-dark">{children}</div>
-              <div className="pt-6 pb-6 text-center text-sm text-gray-700 dark:text-gray-300">
+              <div id="tags" className="border-none py-3 text-sm font-medium leading-5">
+                {tags && (
+                  <div className="flex flex-wrap">
+                    <span className="font-medium">Tags: &nbsp;</span>
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div
+                id="discuss-links"
+                className="pt-6 pb-6 text-center text-sm text-gray-700 dark:text-gray-300"
+              >
                 <Link href={discussUrl(path)} rel="nofollow">
                   Discuss on Twitter
                 </Link>
