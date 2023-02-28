@@ -16,5 +16,6 @@ test('Homepage elements are rendered', async ({ page }) => {
   let menu_items = await page.getByTestId('desktop-nav-menu').locator('a').all()
   await expect(menu_items[0]).toHaveText('Home')
   await expect(menu_items[1]).toHaveText('Blog')
-  await expect(menu_items[2]).toHaveText('About')
+  await expect(menu_items[2]).toHaveText('Tags')
+  await expect(menu_items[3]).toHaveText('About')
 });

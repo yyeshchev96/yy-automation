@@ -5,8 +5,8 @@ const headerNavLinks = [
   // { href: '/timeline', title: 'Timeline' }, // In-development
   // { href: '/courses', title: 'Courses' }, // In-development
   // { href: '/projects', title: 'Projects' }, // In-development
+  { href: '/tags', title: 'Tags' },
   { href: '/about', title: 'About' },
-  // { href: '/tags', title: 'Tags' },
 ]
 
 export default headerNavLinks
