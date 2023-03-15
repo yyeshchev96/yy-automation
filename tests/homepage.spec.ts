@@ -17,5 +17,5 @@ test('Homepage elements are rendered', async ({ page }) => {
   await expect(homePage.logo).toBeInViewport()
 
   // check menu items
-  await expect(homePage.menuItem).toHaveText(['Home', 'Blog', 'Tags', 'About'])
+  await expect(homePage.menuItems).toHaveText(['Home', 'Blog', 'Tags', 'About'])
 })
