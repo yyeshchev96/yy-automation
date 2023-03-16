@@ -113,7 +113,8 @@ export default function ListLayout({
         <ul>
           {!filteredBlogPosts.length && <NoPostsFound />}
           {displayPosts.map((post) => {
-            const { path, date, title, summary, tags } = post
+            const { path, date, title, summary, tags, externalUrl } = post
+            const postUrl = externalUrl ? externalUrl : `/${path}`
             return (
               <li key={path} className="border-b border-gray-200 py-6 dark:border-gray-700">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -126,7 +127,7 @@ export default function ListLayout({
                   <div className="xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                        <Link href={postUrl} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
                       </h3>
@@ -136,7 +137,7 @@ export default function ListLayout({
                         ))}
                       </div>
                     </div>
-                    <Link href={`/${path}`}>
+                    <Link href={postUrl}>
                       <div className="prose mt-4 mb-2 max-w-none text-gray-500 dark:text-gray-400">
                         {summary}
                       </div>

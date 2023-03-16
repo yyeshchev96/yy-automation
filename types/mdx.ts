@@ -20,6 +20,7 @@ export interface MdxFrontMatter {
   images?: string[] | string
   authors?: string[]
   slug: string
+  externalUrl?: string
 }
 
 export type ReadingTime = ReturnType<typeof readingTime>
