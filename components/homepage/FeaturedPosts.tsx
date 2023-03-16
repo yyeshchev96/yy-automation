@@ -11,20 +11,20 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
       <h1 className="my-4 mt-12 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
         Latest in Blog:
       </h1>
-      <ul className="flex flex-col gap-8 sm:flex-row">
+      <ul className="flex flex-col gap-8 md:flex-row">
         {!posts.length && <NoPostsFound />}
         {posts.slice(0, MAX_POSTS).map((post) => {
           const { slug, title, summary, tags } = post
           return (
-            <li key={slug} className="w-full sm:w-1/3">
+            <li key={slug} className="w-full md:w-1/3">
               {/* Post Card Container */}
-              <article className="h-full scale-100 transform rounded-xl border border-gray-200 shadow-lg shadow-gray-300 duration-300 hover:border-primary-500 dark:border-gray-700 dark:shadow-primary-700 dark:hover:border-primary-700 sm:hover:scale-105">
+              <article className="h-full scale-100 transform rounded-xl border border-gray-100 shadow-lg shadow-gray-300 duration-300 hover:border-primary-500 dark:border-gray-700 dark:shadow-primary-700 dark:hover:border-primary-700 md:hover:scale-105">
                 {/* Content Container */}
                 <div className="flex h-full flex-col justify-start p-4">
                   <Link href={`/blog/${slug}`}>
                     <h2 className="text-lg font-bold leading-6 tracking-tight">{title}</h2>
                   </Link>
-                  <div>
+                  <div className="break-all">
                     {tags.map((tag) => (
                       <Tag key={tag} text={tag} />
                     ))}

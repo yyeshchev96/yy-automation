@@ -34,6 +34,15 @@ module.exports = {
         primary: colors.emerald,
         gray: colors.neutral,
       },
+      boxShadow: {
+        // default values
+        // md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);',
+        // lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);',
+
+        // custom config
+        md: '4px 8px 8px 0px rgb(0 0 0 / 0.1)',
+        lg: '8px 10px 10px 0px rgb(0 0 0 / 0.1)',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
